@@ -9,7 +9,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "INSERT_YOUR_BUCKET_NAME_HERE"
+    bucket         = "eswap-au-tfstate-1776745154" #Bucket name form Remote State
     key            = "dev/networking/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "eswap-au-tfstate-lock"
