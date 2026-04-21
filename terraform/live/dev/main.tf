@@ -14,11 +14,11 @@ module "networking" {
 }
 
 # 4 Databases
-module "database" {
-  source = "../../modules/database"
+# module "database" {
+#   source = "../../modules/database"
 
-  environment          = "dev"
-  vpc_id               = module.networking.vpc_id
-  private_subnet_ids    = module.networking.private_subnet_ids
-  db_security_group_id = module.networking.db_security_group_id
-}
+#   environment          = "dev"
+#   vpc_id               = module.networking.vpc_id
+#   private_subnet_ids    = module.networking.private_subnet_ids
+#   db_security_group_id = module.networking.db_security_group_id
+# }
