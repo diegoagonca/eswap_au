@@ -12,3 +12,13 @@ module "networking" {
   private_subnets    = ["10.0.10.0/24", "10.0.11.0/24"]
   availability_zones = ["us-east-1a", "us-east-1b"]
 }
+
+# 4 Databases
+module "database" {
+  source = "../../modules/database"
+
+  environment          = "dev"
+  vpc_id               = module.networking.vpc_id
+  private_subnet_ids    = module.networking.private_subnet_ids
+  db_security_group_id = module.networking.db_security_group_id
+}
