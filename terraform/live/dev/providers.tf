@@ -9,11 +9,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "eswap-au-tfstate-1776745154" #Bucket name form Remote State
-    key            = "dev/networking/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "eswap-au-tfstate-lock"
-    encrypt        = true
+    bucket       = "eswap-au-tfstate-1776745154" #Bucket name form Remote State
+    key          = "dev/networking/terraform.tfstate"
+    region       = "us-east-1"
+    use_lockfile = true
   }
 }
 
